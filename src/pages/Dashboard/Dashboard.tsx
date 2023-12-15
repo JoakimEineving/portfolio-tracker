@@ -1,9 +1,15 @@
 import { Header } from "../../components";
 import Card from "./components/Card";
 import Search from "./components/Search";
-import { mockStocks } from "../../constants/mock";
+import { mockStockHistory, mockStocks } from "../../constants/mock";
+
+import StockChart from "./components/StockChart";
+
 
 function Dashboard() {
+  const selectedStock = mockStocks[0]; 
+  const selectedStockHistory = mockStockHistory;
+  
   return (
     <>
       <Header />
@@ -13,7 +19,8 @@ function Dashboard() {
           <Card title="Overview"> </Card>
         </div>
         <div className="md:col-span-2 row-span-4">
-          <Card title="Chart"> </Card>
+     
+          <Card title="Chart"><StockChart stockData={selectedStock} stockHistory={selectedStockHistory} /></Card>
         </div>
         <div className="row-span-2 xl:row-span-4 overflow-auto ">
           <Card title="Your assets">
@@ -24,15 +31,17 @@ function Dashboard() {
                   <th>Price</th>
                   <th>High</th>
                   <th>Low</th>
+                  <th>Change</th>
                 </tr>
               </thead>
               <tbody>
                 {mockStocks.map((stock, index) => (
                   <tr key={index}>
                     <td>{stock.symbol}</td>
-                    <td>${parseFloat(stock.price).toFixed(2)}</td>
-                    <td>${parseFloat(stock.high).toFixed(2)}</td>
-                    <td>${parseFloat(stock.low).toFixed(2)}</td>
+                    <td>${stock.price.toFixed(2)}</td>
+                    <td>${stock.dayHigh.toFixed(2)}</td>
+                    <td>${stock.dayLow.toFixed(2)}</td>
+                    <td>{stock.changesPercentage.toFixed(2)}%</td>
                   </tr>
                 ))}
               </tbody>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { mockStocks } from "../../../constants/mock";
-import Stock from "../../../types/Stock";
+import { Stock } from "../../../types/Stock";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -15,6 +15,7 @@ const Search = () => {
         stock.symbol.toLowerCase().includes(searchText.toLowerCase())
       );
       setSearchResults(filteredResults);
+      
     } else {
       setSearchResults([]);
     }
