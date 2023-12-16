@@ -38,7 +38,13 @@ const StockChart: React.FC<StockChartProps> = ({ stockData, stockHistory }) => {
           options: {
             scales: {
               y: {
-                beginAtZero: true,
+                beginAtZero: false,
+              },
+              x: {
+                ticks: {
+                  autoSkip: true,
+                  maxTicksLimit: 10  
+                }
               },
             },
           },
