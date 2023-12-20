@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Header } from "../../components";
 import Card from "./components/Card";
-import Search from "./components/Search";
+// import Search from "./components/Search";
+import Stat from "./components/Stat";
 import { mockStockHistory, mockStocks } from "../../constants/mock";
 import { Stock, StockHistory } from "../../types/Stock";
 import StockChart from "./components/StockChart";
@@ -39,10 +40,14 @@ function Dashboard() {
   return (
     <>
       <Header />
-      <Search />
+      {/* <Search /> */}
       <div className="h-screen grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-8 md:grid-rows-7 xl:grid-rows-5 auto-rows-fr gap-6 p-10">
-        <div className="col-span-1 md:col-span-2 xl:col-span-3 row-span-1 flex justify-start items-center">
-          <Card title="Overview"> </Card>
+        <div className="col-span-3 row-span-1 flex justify-start items-center ">
+          <Card title=""><Stat title="Portfolio Value" value="$1,000,000" description="Total value of your portfolio" />
+          <Stat title="Portfolio Value" value="$1,000,000" description="Total value of your portfolio" />
+          <Stat title="Portfolio Value" value="$1,000,000" description="Total value of your portfolio" />
+          <Stat title="Portfolio Value" value="$1,000,000" description="Total value of your portfolio" />
+          </Card>
         </div>
         <div className="md:col-span-2 row-span-4">
           <Card title="">
