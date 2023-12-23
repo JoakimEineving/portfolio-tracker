@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.AddScoped<IMarketService, MarketService>();
+builder.Services.AddScoped<IStockQuoteService, StockQuoteService>();
 
 builder.Services.AddCors(options =>
 {
