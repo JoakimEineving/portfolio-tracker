@@ -1,5 +1,4 @@
-﻿
-namespace StocksApi.Services
+﻿namespace StocksApi.Services
 {
     public class MarketService : IMarketService
     {

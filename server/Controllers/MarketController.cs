@@ -6,10 +6,10 @@ namespace StocksApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MarketOverviewController : ControllerBase
+    public class MarketController : ControllerBase
     {
         private readonly IMarketService _MarketService;
-        public MarketOverviewController(IMarketService MarketService)
+        public MarketController(IMarketService MarketService)
         {
             _MarketService = MarketService;
         }
